@@ -25,4 +25,4 @@ you to the "Picture" section.
 
 Picture: 
 
-
+![StartupDesign](https://user-images.githubusercontent.com/98627331/215234923-069d459c-2d64-4eef-8e68-15c8bd981593.jpg)
