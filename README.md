@@ -29,5 +29,7 @@ Picture:
 
 
 To remember:
+
 Elastic IP: 3.136.4.32
+
 SSH: ssh -i [Key] ubuntu@3.136.4.32
