@@ -33,3 +33,13 @@ To remember:
 Elastic IP: 3.136.4.32
 
 SSH: ssh -i [Key] ubuntu@3.136.4.32
+
+HTML Project. Simon:
+
+Make sure that you have know the link to your key so that you don't have to waste time looking it up everytime you want to make a change.
+
+Use https:// if you want to go to an external site otherwise it will think you are using a file in your repository. 
+
+Make a commit before you push your stuff or else you will have a hard time remembering what you did when you find a but
+
+ 
