@@ -14,6 +14,8 @@ body {
     border: 1px black solid !important;
   }
 
+
+
   h2{
     font-family: 'Vollkorn', serif;
     font-size: large;
@@ -23,6 +25,16 @@ body {
     font-family: 'EB Garamond', serif;
     font-size: medium;
   }
+
+ p{
+    opacity: 1;
+    animation: fade 10s ;
+}
+
+@keyframes fade {
+  0% { opacity: 0 }
+  100% { opacity: 1 }
+}
 
   
   
