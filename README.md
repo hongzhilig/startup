@@ -43,3 +43,6 @@ Use https:// if you want to go to an external site otherwise it will think you a
 Make a commit before you push your stuff or else you will have a hard time remembering what you did when you find a but
 
  
+CSS Makes my head hurt
+
+Use google fonts with a link to import them. 
