@@ -46,3 +46,6 @@ Make a commit before you push your stuff or else you will have a hard time remem
 CSS Makes my head hurt
 
 Use google fonts with a link to import them. 
+You can put icon in buttons instead of text.
+Forms are for allowing people to input things
+fading in is really anoying to do
