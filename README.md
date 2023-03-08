@@ -45,6 +45,64 @@ Make a commit before you push your stuff or else you will have a hard time remem
 <br />
 <br />
 <br />
+
+Console Commands:
+
+echo: output the parameters of the command
+
+cd: Change directory
+
+mkdir: Make directory
+
+rmdir: Remove directory
+
+rm: Remove file(s)
+
+mv: Move file(s)
+
+cp: copy files
+
+ls: List files
+
+curl: Command line client URL browser
+
+grep: Regular expression search
+
+find: find files
+
+top: View running processes with CPU and memory usage
+
+df: View disk staticstics
+
+cat: Output the contents of a file
+
+less: Interactively output the contents of a file
+
+wc: Count the words in a file
+
+ps: View the currently running processes
+
+kill: Kill a currently running processes
+
+sudo: Execute a command as a super user (admin)
+
+ssh: Create a secure shell on a remote computer
+
+scp: Securely copy files to a remote computer
+
+history: Show the history of a remote computer
+
+ping: Check if a website is up
+
+tracert: Trace the connections to a website
+
+dig: Sho the DNS information foa a domain 
+
+man: look up a command in the manual
+
+<br />
+<br />
+<br />
   
   
 HTML Common Tags:
@@ -113,7 +171,8 @@ HTML Common Tags:
  
  svg: Scalable vector graph content
  
- iframe: Inline frame of another HTML page  <br />
+ iframe: Inline frame of another HTML page  
+ <br />
  <br />
  <br />
  
@@ -123,4 +182,12 @@ Use google fonts with a link to import them.
 You can put icon in buttons instead of text.
 Forms are for allowing people to input things
 fading in is really anoying to do
+
+<br />
+<br />
+<br />
+
+Midterm Kahoot:
+
+To point to another DNS record, you should use CNAME DNS record type. Think of it as an alas. 
 
