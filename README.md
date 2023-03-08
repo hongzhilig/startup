@@ -40,8 +40,11 @@ Make sure that you have know the link to your key so that you don't have to wast
 
 Use https:// if you want to go to an external site otherwise it will think you are using a file in your repository. 
 
-Make a commit before you push your stuff or else you will have a hard time remembering what you did when you find a but  
-  
+Make a commit before you push your stuff or else you will have a hard time remembering what you did when you find a but
+
+<br />
+<br />
+<br />
   
   
 HTML Common Tags:
@@ -110,10 +113,10 @@ HTML Common Tags:
  
  svg: Scalable vector graph content
  
- iframe: Inline frame of another HTML page  
-   
-   
-   
+ iframe: Inline frame of another HTML page  <br />
+ <br />
+ <br />
+ 
 CSS Makes my head hurt
 
 Use google fonts with a link to import them. 
