@@ -212,9 +212,7 @@ To point to another DNS record, you should use CNAME DNS record type. Think of i
 CSS box model, outside going in is [margin, boarder, padding, content].
 
 To make a certain element do something such as making only the header blue you would do
-<div>other</div>  <br />
-<div class="header">BYU</div>  <br />
-div.header {color:blue;}
+div.header {color:blue;}. The .header specifies what part of the object you want to change
 
 If something does not have quotes then it is not a proper JSON object
 
