@@ -42,6 +42,12 @@ Use https:// if you want to go to an external site otherwise it will think you a
 
 Make a commit before you push your stuff or else you will have a hard time remembering what you did when you find a but
 
+HTML:
+
+Common Tags:
+
+ html: The page container
+ head: Header information
  
 CSS Makes my head hurt
 
@@ -49,3 +55,4 @@ Use google fonts with a link to import them.
 You can put icon in buttons instead of text.
 Forms are for allowing people to input things
 fading in is really anoying to do
+
