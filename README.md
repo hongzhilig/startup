@@ -100,6 +100,8 @@ dig: Sho the DNS information foa a domain
 
 man: look up a command in the manual
 
+chmod: Makes a script exeutable
+
 <br />
 <br />
 <br />
@@ -176,7 +178,23 @@ HTML Common Tags:
  <br />
  <br />
  
-CSS Makes my head hurt
+ TCP/IP layers:
+ 
+ Application: HTTPS: Functinality like we browsing
+ 
+ Transport: TCP: Moving connection information packets
+ 
+ Internet: IP: Establishing connections
+ 
+ Link: Fiber, hardware: Physical connections
+ 
+ <br />
+ <br />
+ <br />
+ 
+CSS Makes my head hurt:
+
+Import font example: @import url('https://fonts.googleapis.com/css2?family=Rubik');
 
 Use google fonts with a link to import them. 
 You can put icon in buttons instead of text.
@@ -190,4 +208,13 @@ fading in is really anoying to do
 Midterm Kahoot:
 
 To point to another DNS record, you should use CNAME DNS record type. Think of it as an alas. 
+
+CSS box model, outside going in is [margin, boarder, padding, content].
+
+To make a certain element do something such as making only the header blue you would do
+<div>other</div>  <br />
+<div class="header">BYU</div>  <br />
+div.header {color:blue;}
+
+If something does not have quotes then it is not a proper JSON object
 
