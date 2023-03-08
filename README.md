@@ -108,9 +108,9 @@ You can chain the inputs and outputs of commands using special characters
 
 |: Take the output from the command on the left and pipe, or pass, it to the command on the right
 
->: Redirect output of a file. Overwrites the file if it exists
+">": Redirect output of a file. Overwrites the file if it exists
 
->>: Redirect output to a file. Appends if the file exists
+">>": Redirect output to a file. Appends if the file exists
 
 CTRL-R: use type ahead to find previous commands
 
