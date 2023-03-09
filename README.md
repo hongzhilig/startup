@@ -318,6 +318,20 @@ some: Run a function to test if any items match: a.some(i => 1 < 1)
 <br />
 <br />
 
+Event Listeners:
+
+Clipboard: cut, copied, pasted
+Focus: An element gets focus
+Keyboard: Keys are pressed 
+Mouse: Click Events
+Text selection: When text is selected 
+
+onclick: <button onclick='alert("clicked")'>click me</button>
+
+<br />
+<br />
+<br />
+
 Midterm Kahoot:
 
 To point to another DNS record, you should use CNAME DNS record type. Think of it as an alas. 
@@ -339,5 +353,5 @@ document is always avaliable and gives you an object to interact with the dom
 
 The DOM textContent property sets the child text for the an element. 
 
-An DNS subdomain example: c260.cs.byu.edu The whole thing is a subdomain 
+An DNS subdomain example: c260.cs.byu.edu The whole thing is a subdomain.
 
