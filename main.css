@@ -6,7 +6,7 @@ body {
 
   header {
     font-family: 'Vollkorn', serif;
-    font-size: large;
+    font-size: larger;
     flex: 0 80px;
   }
 

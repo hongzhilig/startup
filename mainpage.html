@@ -26,32 +26,21 @@
     <header>
         <h1>
             Book Collection
-            <button type="button" class="btn btn-success"> <i class="fa-sharp fa-solid fa-plus"></i> </button>
-            <button type="button" class="btn btn-primary"> <i class="fa-sharp fa-solid fa-pen-to-square"></i> </button>
-            <button type="button" class="btn btn-danger"> <i class="fa-sharp fa-solid fa-trash"></i> </button>
+            <button id="add" type="button" class="btn btn-success"> <i class="fa-sharp fa-solid fa-plus"></i> </button>
+            <button id="edit" type="button" class="btn btn-primary"> <i class="fa-sharp fa-solid fa-pen-to-square"></i> </button>
+            <button id="delete" type="button" class="btn btn-danger"> <i class="fa-sharp fa-solid fa-trash"></i> </button>
         </h1>
     </header>
 
 
     <h2 class="text-center">
-        <button type="button" class="btn btn-secondary"> <i class="fa-solid fa-magnifying-glass"></i> </button>
-        <button type="button" class="btn btn-secondary"> <i class="fa-solid fa-filter"></i> </button>
+        <button id="serach" type="button" class="btn btn-secondary"> <i class="fa-solid fa-magnifying-glass"></i> </button>
+        <button id="filter" type="button" class="btn btn-secondary"> <i class="fa-solid fa-filter"></i> </button>
     </h2>
     <main class="bg-secondary text-center">
-        <div>
-            <hr>
-            <p>
-                Total Books: 17 volumes | Total amount spent: $195
-            </p>
-            <hr>
-            <p>
-                "name" | volumes: 5-10 | Total volumes: 5 | Language: EN | Completed: No | Price per volume: $10
-            </p>
-            <hr>
-            <p>
-                アズ−ルレ−ンコミックアンソロジ | volumes: 1-12 | volumes 12 | Language: JP | Completed: yes | Price per volume: $15
-            </p>
-            <hr>
+        <div id="totals"></div>
+        <div id="listOfBooks">
+            List of Books
         </div>
     </main>
 
@@ -65,5 +54,7 @@
           >
         </div>
       </footer>
+
+      <script src="list.js"></script>
 </body>
 </html>
