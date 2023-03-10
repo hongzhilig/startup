@@ -14,8 +14,6 @@ body {
     border: 1px black solid !important;
   }
 
-
-
   h2{
     font-family: 'Vollkorn', serif;
     font-size: large;
@@ -36,5 +34,25 @@ body {
   100% { opacity: 1 }
 }
 
-  
+#totals{
+  padding-bottom: 1em;
+  font-size: x-large;
+}
+
+#mainBody {
+  font-family: 'EB Garamond', serif, monospace;
+  color: rgb(185, 185, 185);
+  background: rgb(20, 20, 20);
+  padding: 1em;
+  min-height: 10em;
+  text-align: center;
+}
+
+th {
+  cursor: pointer;
+}
+
+td {
+  min-width: 200px;
+}
   

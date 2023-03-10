@@ -35,3 +35,4 @@ for (let i = 0; i < bookList.length; i++){
 
 document.getElementById("totals").innerHTML = "Total Volumes: " + totalVol + " | Total Price: $" + totalPrice;
 
+
