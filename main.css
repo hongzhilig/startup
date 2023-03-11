@@ -14,9 +14,20 @@ body {
     border: 1px black solid !important;
   }
 
+  h1{
+    padding-left: 12px;
+    padding-top: 8px;
+  }
+
   h2{
     font-family: 'Vollkorn', serif;
     font-size: large;
+  }
+
+  h3{
+    padding-top: 20px;
+    font-size: xx-large;
+    text-align: center;
   }
 
   main{
@@ -34,18 +45,22 @@ body {
   100% { opacity: 1 }
 }
 
+#mainBody {
+  font-family: 'EB Garamond', serif, monospace;
+  color: rgb(255, 255, 255);
+  background: rgb(20, 20, 20);
+  padding: 1em;
+  min-height: 8em;
+  text-align: center;
+}
+
 #totals{
   padding-bottom: 1em;
   font-size: x-large;
 }
 
-#mainBody {
-  font-family: 'EB Garamond', serif, monospace;
-  color: rgb(185, 185, 185);
-  background: rgb(20, 20, 20);
-  padding: 1em;
-  min-height: 10em;
-  text-align: center;
+#listOfBooks{
+  font-size: large;
 }
 
 th {
