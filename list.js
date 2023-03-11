@@ -8,7 +8,7 @@ const booksInfo = [
         Language: "EN", price$: 13
     },
     {
-        Title: "ホリミヤ (Horimiya)", Author: "HERO", Volumes: "1-5, 12-16 + 16SP", NumVol: 9, Completion: "complete",
+        Title: "ホリミヤ (Horimiya)", Author: "HERO", Volumes: "1-5, 12-16 + 16SP", NumVol: 11, Completion: "complete",
         Language: "JP", price$: 12
     },
     {
