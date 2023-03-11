@@ -37,60 +37,50 @@ for (let i = 0; i < booksInfo.length; i++) {
 
 document.getElementById("totals").innerHTML = "Total Volumes: " + totalVol + " | Total Price: $" + totalPrice;
 
-function makeTable(data = booksInfo){
-    document.createElement("tr");
-    document.createElement("th");
+function makeTable(data = booksInfo) {
     const bookList = document.getElementById("listOfBooks");
     let row = "";
-    for(let i of data){
-        let string = `<tr>`;
-        string += i.Title + " ";
-        string += i.Author + " ";
-        string += i.Volumes + " ";
-        string += i.NumVol + " ";
-        string += i.Language + " ";
-        string += i.price$;
-        string += "  |  ";
-        string += '</tr>'
+    for (let i of data) {
+        let string = "<tr>";
+        string += "<td>" + i.Title + "</td>";
+        string += "<td>" + i.Author + "</td>";
+        string += "<td>" + i.Volumes + "</td>";
+        string += "<td>" + i.NumVol + "</td>";
+        string += "<td>" + i.Language + "</td>";
+        string += "<td>" + i.price$ + "</td>";
+        string += "</tr>";
 
         row += string;
     }
-    bookList.innerHTML = `<table> 
-        <tr> 
-            <th>${"Title"}</th> 
-        </tr>
-    </table>`;
-    bookList.innerHTML = row;
+    bookList.innerHTML = "<table><tr><th>" + headers.join("</th><th>") + "</th></tr>" + row + "</table>";
 }
 
-// tested a thing that does not work
+makeTable(booksInfo); 
 
 // function makeTable(data = booksInfo){
 //     document.createElement("tr");
 //     document.createElement("th");
 //     const bookList = document.getElementById("listOfBooks");
-//     // let row = "";
-//     // for(let i of data){
-//     //     let string = `<tr>`;
-//     //     for(j of i){
-//     //         string += `<td>`;
-//     //         string += j;
-//     //     }
-//     //     string += `</td>`;
-//     //     string += `</tr>`;
-//     //     row += string;
-//     // }
+//     let row = "";
+//     for(let i of data){
+//         let string = `<tr>`;
+//         string += i.Title + " ";
+//         string += i.Author + " ";
+//         string += i.Volumes + " ";
+//         string += i.NumVol + " ";
+//         string += i.Language + " ";
+//         string += i.price$;
+//         string += "  |  ";
+//         string += '</tr>'
+
+//         row += string;
+//     }
 //     bookList.innerHTML = `<table> 
 //         <tr> 
 //             <th>${"Title"}</th> 
-//             <th>${"Author"}</th> 
-//             <th>${"Volumes Owned"}</th> 
-//             <th>${"Number of Volumes"}</th> 
-//             <th>${"Language"}</th> 
-//             <th>${"Price In $"}</th> 
 //         </tr>
 //     </table>`;
-//     // bookList.innerHTML = row;
+//     bookList.innerHTML = row;
 // }
 
-makeTable(booksInfo);
+// makeTable(booksInfo);
