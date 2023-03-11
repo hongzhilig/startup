@@ -50,7 +50,7 @@ function makeTable(data = booksInfo){
         string += i.NumVol + " ";
         string += i.Language + " ";
         string += i.price$;
-        string += "\n";
+        string += "  |  ";
         string += '</tr>'
 
         row += string;
@@ -62,5 +62,35 @@ function makeTable(data = booksInfo){
     </table>`;
     bookList.innerHTML = row;
 }
+
+// tested a thing that does not work
+
+// function makeTable(data = booksInfo){
+//     document.createElement("tr");
+//     document.createElement("th");
+//     const bookList = document.getElementById("listOfBooks");
+//     // let row = "";
+//     // for(let i of data){
+//     //     let string = `<tr>`;
+//     //     for(j of i){
+//     //         string += `<td>`;
+//     //         string += j;
+//     //     }
+//     //     string += `</td>`;
+//     //     string += `</tr>`;
+//     //     row += string;
+//     // }
+//     bookList.innerHTML = `<table> 
+//         <tr> 
+//             <th>${"Title"}</th> 
+//             <th>${"Author"}</th> 
+//             <th>${"Volumes Owned"}</th> 
+//             <th>${"Number of Volumes"}</th> 
+//             <th>${"Language"}</th> 
+//             <th>${"Price In $"}</th> 
+//         </tr>
+//     </table>`;
+//     // bookList.innerHTML = row;
+// }
 
 makeTable(booksInfo);
