@@ -4,6 +4,14 @@ const booksInfo = [
         Language: "JP", price$: 15
     },
     {
+        Title: "Horimiya", Author: "HERO", Volumes: "1-15", NumVol: 15, Completion: "incomplete",
+        Language: "EN", price$: 13
+    },
+    {
+        Title: "ホリミヤ (Horimiya)", Author: "HERO", Volumes: "1-5, 12-16 + 16SP", NumVol: 9, Completion: "complete",
+        Language: "JP", price$: 12
+    },
+    {
         Title: "Spy X Family", Author: "Tatsuya Endo", Volumes: "1-8", NumVol: 8, Completion: "incomplete",
         Language: "EN", price$: 10
     },
