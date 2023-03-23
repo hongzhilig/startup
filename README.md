@@ -355,3 +355,6 @@ The DOM textContent property sets the child text for the an element.
 
 An DNS subdomain example: c260.cs.byu.edu The whole thing is a subdomain.
 
+For the services assignment I learned that using services is not as complicated as I thougth it would be. We just have to wrigth the correct javaScript to use the middle wear. 
+
+I personaly still feel like I have a very serface level understanding of thing but I feel like I can figure things out if I try hard enough
