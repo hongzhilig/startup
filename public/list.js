@@ -33,7 +33,7 @@ const booksInfo = [
     }
 ]
 
-const headers = ["Title", "Author", "Volumes Owned", "Number of Volmues", "Completion", "Language", "Price In $"];
+const headers = ["Title", "Author", "Volumes Owned", "Number of Volmues", "Completion", "Language", "Price ($)"];
 
 let totalVol = 0;
 let totalPrice = 0;

@@ -1,4 +1,6 @@
 
+<script src="login.js"></script>
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -25,9 +27,14 @@
         </h3>
     </header>
     <main class="text-center">
-        <form action=""><input type="text" value="Username:"></form>
-        <form action=""> <input type="text" value="Password:"></form>
-        <button type="button" class="btn btn-info"> <a class="nav-link" href="mainpage.html">Login</a> </button>
+        <!-- <form action=""><input type="text" value="Username:"></form>
+        <form action=""> <input type="text" value="Password:"></form> -->
+        <!-- <button type="button" class="btn btn-info"> <a class="nav-link" href="mainpage.html">Login</a> </button> -->
+        <input type="text" id="name" placeholder="Username" />
+        <p></p>
+        <input type="password" id="pass" placeholder="Password" />
+        <p></p>
+        <button class="btn btn-info" onclick="login()">Login</button>
     </main>
     <footer class="text-center">
         <p1>
