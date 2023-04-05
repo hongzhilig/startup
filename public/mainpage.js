@@ -39,9 +39,9 @@ function calcTotals() {
     let totalVol = 0;
     let totalPrice = 0;
 
-    for (let i = 0; i < booksInfo.length; i++) {
-        totalVol += booksInfo[i].NumVol;
-        totalPrice += (booksInfo[i].NumVol * booksInfo[i].price$)
+    for (let i = 0; i < localStorage.getItem('books').length; i++) {
+        totalVol += localStorage.getItem('books')[i].NumVol;
+        totalPrice += (localStorage.getItem('books')[i].NumVol * localStorage.getItem('books')[i].price$)
     }
 
     document.getElementById("totals").innerHTML = "Total Volumes: " + totalVol + " | Total Price: $" + totalPrice;
@@ -71,11 +71,53 @@ function toInsert() {
         Title: "Testing", Author: "Alex", Volumes: "1", NumVol: 1, Completion: "incomplete",
         Language: "EN", price$: 1
     };
-    booksInfo.push(toAdd);
+    // booksInfo.push(toAdd);
+    saveBookToList(toAdd)
     calcTotals();
     makeTable(booksInfo);
+    
 }
 
+async function saveBookToList(bookToAdd){
+
+    try {
+        const response = await fetch('/api/allBooks', {
+          method: 'POST',
+          headers: { 'content-type': 'application/json' },
+          body: JSON.stringify(bookToAdd),
+        });
+  
+        // Store what the service gave us as the high scores
+        const book = await response.json();
+        localStorage.setItem('books', JSON.stringify(book));
+      } catch {
+        // If there was an error then just track scores locally
+        // this.updateBooksLocal(bookToAdd);
+      }
+
+}
+
+async function loadBooks() {
+    let books = [];
+    try {
+      // Get the latest high scores from the service
+      const response = await fetch('/api/allBooks');
+      books = await response.json();
+  
+      // Save the scores in case we go offline in the future
+      localStorage.setItem('books', JSON.stringify(scores));
+    } catch {
+      // If there was an error then just use the last saved scores
+      const booksText = localStorage.getItem('books');
+      if (booksText) {
+        books = JSON.parse(booksText);
+      }
+    }
+  
+    makeTable(books);
+  }
+
+loadBooks();
+// makeTable(booksInfo);
 calcTotals();
-makeTable(booksInfo);
 
