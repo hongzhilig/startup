@@ -360,3 +360,8 @@ For the services assignment I learned that using services is not as complicated 
 I personaly still feel like I have a very serface level understanding of thing but I feel like I can figure things out if I try hard enough
 
 I learned that if you don't install mongodb on your Simon project you will spend hours pounding your head on the wall because your code won't work even when you copy and past every thing over.
+
+
+For login you will need to have bcrypt, uuid, cookie-parser installed
+
+Having a dedicated login.css would help. Also a async function for logining should be used
