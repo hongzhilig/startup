@@ -131,6 +131,13 @@ async function loadBooks() {
     return []
   }
 
+function getUserName() {
+    return localStorage.getItem('userName') ?? 'Mystery player';
+}
+
+const userNameEl = document.querySelector('.user-name');
+userNameEl.textContent = this.getUserName();
+
 loadBooks();
 // makeTable(booksInfo);;
 
