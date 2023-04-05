@@ -42,11 +42,16 @@ async function loginOrCreate(endpoint) {
     localStorage.setItem('userName', userName);
     window.location.href = 'mainpage.html';
   } else {
-    const modalEl = document.querySelector('#msgModal');
-    modalEl.querySelector('.modal-body').textContent = `⚠ Error: ${body.msg}`;
-    const msgModal = new bootstrap.Modal(modalEl, {});
-    msgModal.show();
+    document.getElementById("failed").innerHTML = "Failed to do action"
+    // const modalEl = document.querySelector('#msgModal');
+    // modalEl.querySelector('.modal-body').textContent = `⚠ Error: ${body.msg}`;
+    // const msgModal = new bootstrap.Modal(modalEl, {});
+    // msgModal.show();
   }
+}
+
+function main() {
+  window.location.href = 'mainpage.html';
 }
 
 function logout() {

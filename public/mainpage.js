@@ -115,6 +115,13 @@ async function loadBooks() {
     calcTotals();
   }
 
+  function logout() {
+    fetch(`/api/auth/logout`, {
+      method: 'delete',
+    }).then(() => (window.location.href = '/'));
+    window.location.href = 'index.html';
+  }
+
   // converts local data to a usable object
   function localToBooks(){
     const booksText = localStorage.getItem('books');
