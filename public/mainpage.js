@@ -73,28 +73,26 @@ function toInsert() {
     };
     // booksInfo.push(toAdd);
     saveBookToList(toAdd)
-    calcTotals();
-    makeTable(booksInfo);
+    // calcTotals();
+    // makeTable(booksInfo);
     
 }
 
 async function saveBookToList(bookToAdd){
 
     try {
-        const response = await fetch('/api/allBooks', {
+        await fetch('/api/book', {
           method: 'POST',
           headers: { 'content-type': 'application/json' },
           body: JSON.stringify(bookToAdd),
         });
   
-        // Store what the service gave us as the high scores
-        const book = await response.json();
-        localStorage.setItem('books', JSON.stringify(book));
       } catch {
         // If there was an error then just track scores locally
         // this.updateBooksLocal(bookToAdd);
       }
 
+      loadBooks();
 }
 
 async function loadBooks() {
@@ -105,7 +103,7 @@ async function loadBooks() {
       books = await response.json();
   
       // Save the scores in case we go offline in the future
-      localStorage.setItem('books', JSON.stringify(scores));
+      localStorage.setItem('books', JSON.stringify(books));
     } catch {
       // If there was an error then just use the last saved scores
       const booksText = localStorage.getItem('books');
