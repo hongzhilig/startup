@@ -43,7 +43,10 @@ function addBook(book) {
 }
 
 function getCollection() {
-  const cursor = bookCollection.find();
+  const options = {
+    sort: {Title: 1}
+  }
+  const cursor = bookCollection.find({}, options);
   return cursor.toArray();
 }
 

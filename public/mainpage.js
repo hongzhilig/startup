@@ -115,6 +115,7 @@ async function loadBooks() {
     calcTotals();
   }
 
+  // converts local data to a usable object
   function localToBooks(){
     const booksText = localStorage.getItem('books');
       if (booksText) {
