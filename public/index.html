@@ -7,9 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous" />
+    <link 
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" 
+    rel="stylesheet"  
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" 
+    crossorigin="anonymous" 
+    />
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,14 +30,12 @@
         </h3>
     </header>
     <main class="text-center">
-        <!-- <form action=""><input type="text" value="Username:"></form>
-        <form action=""> <input type="text" value="Password:"></form> -->
-        <!-- <button type="button" class="btn btn-info"> <a class="nav-link" href="mainpage.html">Login</a> </button> -->
-        <input type="text" id="name" placeholder="Username" />
+        <input type="text" id="userName" placeholder="Username" />
         <p></p>
-        <input type="password" id="pass" placeholder="Password" />
+        <input type="password" id="userPassword" placeholder="Password" />
         <p></p>
-        <button class="btn btn-info" onclick="login()">Login</button>
+        <button type="button" class="btn btn-primary" onclick="loginUser()">Login</button>
+        <button type="button" class="btn btn-primary" onclick="createUser()">Create</button>
     </main>
     <footer class="text-center">
         <p1>
