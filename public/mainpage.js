@@ -39,9 +39,11 @@ function calcTotals() {
     let totalVol = 0;
     let totalPrice = 0;
 
-    for (let i = 0; i < localStorage.getItem('books').length; i++) {
-        totalVol += localStorage.getItem('books')[i].NumVol;
-        totalPrice += (localStorage.getItem('books')[i].NumVol * localStorage.getItem('books')[i].price$)
+    bookList = localToBooks();
+
+    for (let i = 0; i < bookList.length; i++) {
+        totalVol += bookList[i].NumVol;
+        totalPrice += bookList[i].NumVol * bookList[i].price$;
     }
 
     document.getElementById("totals").innerHTML = "Total Volumes: " + totalVol + " | Total Price: $" + totalPrice;
@@ -106,16 +108,21 @@ async function loadBooks() {
       localStorage.setItem('books', JSON.stringify(books));
     } catch {
       // If there was an error then just use the last saved scores
-      const booksText = localStorage.getItem('books');
-      if (booksText) {
-        books = JSON.parse(booksText);
-      }
+      localToBooks();
     }
   
     makeTable(books);
+    calcTotals();
+  }
+
+  function localToBooks(){
+    const booksText = localStorage.getItem('books');
+      if (booksText) {
+        return JSON.parse(booksText);
+      }
+    return []
   }
 
 loadBooks();
-// makeTable(booksInfo);
-calcTotals();
+// makeTable(booksInfo);;
 
