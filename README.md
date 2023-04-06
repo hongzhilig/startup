@@ -365,3 +365,6 @@ I learned that if you don't install mongodb on your Simon project you will spend
 For login you will need to have bcrypt, uuid, cookie-parser installed
 
 Having a dedicated login.css would help. Also a async function for logining should be used
+
+could not get the dedicated login.css to work, but if I put the same code in main.css it works for some reason.
+
