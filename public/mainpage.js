@@ -1,37 +1,6 @@
-const booksInfo = [
-    {
-        Title: "アズ−ルレ−ンコミックアンソロジ (Azur Lane comic anthology)", Author: "anthology", Volumes: "1-12", NumVol: 12, Completion: "complete",
-        Language: "JP", price$: 15
-    },
-    {
-        Title: "Horimiya", Author: "HERO", Volumes: "1-15", NumVol: 15, Completion: "incomplete",
-        Language: "EN", price$: 13
-    },
-    {
-        Title: "ホリミヤ (Horimiya)", Author: "HERO", Volumes: "1-5, 12-16 + 16SP", NumVol: 11, Completion: "complete",
-        Language: "JP", price$: 12
-    },
-    {
-        Title: "Spy X Family", Author: "Tatsuya Endo", Volumes: "1-8", NumVol: 8, Completion: "incomplete",
-        Language: "EN", price$: 10
-    },
-    {
-        Title: "SPY X FAMILY", Author: "Tatsuya Endo", Volumes: "1-2", NumVol: 2, Completion: "incomplete",
-        Language: "JP", price$: 10
-    },
-    {
-        Title: "The World God Only Knows", Author: "Wakaki Tamiki", Volumes: "1-25", NumVol: 25, Completion: "complete",
-        Language: "JP", price$: 12
-    },
-    {
-        Title: "We Never Learn", Author: "Taishi Tsutsui", Volumes: "1-21", NumVol: 21, Completion: "complete",
-        Language: "EN", price$: 10
-    },
-    {
-        Title: "ZOM 100: BUCKET LIST OF THE DEAD", Author: "Haro Aso", Volumes: "1-8", NumVol: 8, Completion: "incomplete",
-        Language: "EN", price$: 13
-    }
-]
+//Event message
+const BookAddedEvent = 'bookAdded';
+let socket;
 
 const headers = ["Title", "Author", "Volumes Owned", "Number of Volmues", "Completion", "Language", "Price ($)"];
 
@@ -75,68 +44,105 @@ function toInsert() {
     };
     // booksInfo.push(toAdd);
     saveBookToList(toAdd)
+    broadcastEvent(localStorage.getItem('userName'), BookAddedEvent, toAdd.Title)
     // calcTotals();
     // makeTable(booksInfo);
-    
+
 }
 
-async function saveBookToList(bookToAdd){
+async function saveBookToList(bookToAdd) {
 
     try {
         await fetch('/api/book', {
-          method: 'POST',
-          headers: { 'content-type': 'application/json' },
-          body: JSON.stringify(bookToAdd),
+            method: 'POST',
+            headers: { 'content-type': 'application/json' },
+            body: JSON.stringify(bookToAdd),
         });
-  
-      } catch {
+
+    } catch {
         // If there was an error then just track scores locally
         // this.updateBooksLocal(bookToAdd);
-      }
+    }
 
-      loadBooks();
+    loadBooks();
 }
 
 async function loadBooks() {
     let books = [];
     try {
-      // Get the latest high scores from the service
-      const response = await fetch('/api/allBooks');
-      books = await response.json();
-  
-      // Save the scores in case we go offline in the future
-      localStorage.setItem('books', JSON.stringify(books));
+        // Get the latest high scores from the service
+        const response = await fetch('/api/allBooks');
+        books = await response.json();
+
+        // Save the scores in case we go offline in the future
+        localStorage.setItem('books', JSON.stringify(books));
     } catch {
-      // If there was an error then just use the last saved scores
-      localToBooks();
+        // If there was an error then just use the last saved scores
+        localToBooks();
     }
-  
+
     makeTable(books);
     calcTotals();
-  }
+}
 
-  function logout() {
+function logout() {
     fetch(`/api/auth/logout`, {
-      method: 'delete',
+        method: 'delete',
     }).then(() => (window.location.href = '/'));
     window.location.href = 'index.html';
-  }
+}
 
-  // converts local data to a usable object
-  function localToBooks(){
+// converts local data to a usable object
+function localToBooks() {
     const booksText = localStorage.getItem('books');
-      if (booksText) {
+    if (booksText) {
         return JSON.parse(booksText);
-      }
+    }
     return []
-  }
+}
 
 function getUserName() {
     return localStorage.getItem('userName') ?? 'Mystery player';
 }
 
+function configureWebSocket() {
+    const protocol = window.location.protocol === 'http:' ? 'ws' : 'wss';
+    socket = new WebSocket(`${protocol}://${window.location.host}/ws`);
+    socket.onopen = (event) => {
+        displayMsg('system', 'librarian', 'connected');
+    };
+    socket.onclose = (event) => {
+        displayMsg('system', 'librarian', 'disconnected');
+    };
+    socket.onmessage = async (event) => {
+        const msg = JSON.parse(await event.data.text());
+        if (msg.type === BookAddedEvent) {
+            displayMsg('user', msg.from, `added ${msg.value}`);
+        } else  {
+            displayMsg('user', msg.from, `How did you do this?`);
+        }
+    };
+}
+
+function displayMsg(cls, from, msg) {
+    const chatText = document.querySelector('#user-messages');
+    chatText.innerHTML =
+        `<div class="event"><span class="${cls}-event">${from}</span> ${msg}</div>` + chatText.innerHTML;
+}
+
+function broadcastEvent(from, type, value) {
+    const event = {
+        from: from,
+        type: type,
+        value: value,
+    };
+    socket.send(JSON.stringify(event));
+}
+
+
 const userNameEl = document.querySelector('.user-name');
 userNameEl.textContent = this.getUserName();
+configureWebSocket();
 
 loadBooks();
 // makeTable(booksInfo);;
