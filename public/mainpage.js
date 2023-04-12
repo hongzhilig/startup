@@ -34,7 +34,7 @@ function makeTable(data = booksInfo) {
 
         row += string;
     }
-    bookList.innerHTML = "<table><tr><th>" + headers.join("</th><th>") + "</th></tr>" + row + "</table>";
+    bookList.innerHTML = "<table class=\"myTable\"><tr><th>" + headers.join("</th><th>") + "</th></tr>" + row + "</table>";
 }
 
 function toInsert() {
@@ -42,12 +42,8 @@ function toInsert() {
         Title: "Testing", Author: "Alex", Volumes: "1", NumVol: 1, Completion: "incomplete",
         Language: "EN", price$: 1
     };
-    // booksInfo.push(toAdd);
     saveBookToList(toAdd)
     broadcastEvent(localStorage.getItem('userName'), BookAddedEvent, toAdd.Title)
-    // calcTotals();
-    // makeTable(booksInfo);
-
 }
 
 async function saveBookToList(bookToAdd) {
@@ -65,6 +61,10 @@ async function saveBookToList(bookToAdd) {
     }
 
     loadBooks();
+}
+
+async function deleteBook() {
+    
 }
 
 async function loadBooks() {
