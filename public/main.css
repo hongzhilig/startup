@@ -93,3 +93,8 @@ td {
 .myTable {
   margin: 0 auto
 }
+
+.insertButton{
+  display: block;
+  margin: 0 auto
+}
