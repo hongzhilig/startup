@@ -96,6 +96,11 @@ apiRouter.post('/book', async (req, res) => {
     res.send(books);
 });
 
+apiRouter.delete('/book/deleteAll', async (req, res) => {
+    DB.deleteBooks();
+    res.sendStatus(200)
+})
+
 // Return the application's default page if the path is unknown
 app.use((_req, res) => {
     res.sendFile('index.html', { root: 'public' });

@@ -1,5 +1,6 @@
 //Event message
 const BookAddedEvent = 'bookAdded';
+const BooksDeletedEvent = "allDeleted"
 let socket;
 
 const headers = ["Title", "Author", "Volumes Owned", "Number of Volmues", "Completion", "Language", "Price ($)"];
@@ -38,9 +39,31 @@ function makeTable(data = booksInfo) {
 }
 
 function toInsert() {
+    const title = document.querySelector('#bookTitle')?.value;
+    const author = document.querySelector('#bookAuthor')?.value;
+    const volumes = document.querySelector('#volOwned')?.value;
+    const numVols = document.querySelector('#numVol')?.value;
+    let completed = "";
+    if (document.getElementById('completedButton').checked) {
+        completed = "completed"
+    }
+    else if (document.getElementById('incompleteButton').checked) {
+        completed = "incomplete"
+    }
+    let language = ""
+    if (document.getElementById('enButton').checked) {
+        language = "EN"
+    }
+    else if (document.getElementById('jpButton').checked) {
+        language = "JP"
+    }
+    const price = document.querySelector('#price')?.value;
+
+    intPrice = parseInt(price);
+    intVol = parseInt(numVols);
     toAdd = {
-        Title: "Testing", Author: "Alex", Volumes: "1", NumVol: 1, Completion: "incomplete",
-        Language: "EN", price$: 1
+        Title: title, Author: author, Volumes: volumes, NumVol: intVol, Completion: completed,
+        Language: language, price$: intPrice
     };
     saveBookToList(toAdd)
     broadcastEvent(localStorage.getItem('userName'), BookAddedEvent, toAdd.Title)
@@ -64,7 +87,10 @@ async function saveBookToList(bookToAdd) {
 }
 
 async function deleteBook() {
-    
+    fetch('/api/book/deleteAll', {
+        method: 'delete', 
+    })
+    loadBooks();
 }
 
 async function loadBooks() {

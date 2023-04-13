@@ -42,6 +42,10 @@ function addBook(book) {
   bookCollection.insertOne(book);
 }
 
+async function deleteBooks(){
+  await bookCollection.deleteMany({});
+}
+
 function getCollection() {
   const options = {
     sort: {Title: 1}
@@ -50,4 +54,4 @@ function getCollection() {
   return cursor.toArray();
 }
 
-module.exports = {addBook, getCollection, getUser, getUserByToken, createUser}
+module.exports = {addBook, getCollection, getUser, getUserByToken, createUser, deleteBooks}

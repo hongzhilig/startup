@@ -40,6 +40,7 @@
                     aria-haspopup="true" aria-expanded="false" data-bs-toggle="dropdown">
                     <i class="fa-sharp fa-solid fa-plus"></i>
                 </button>
+                <button id="delete" type="button" class="btn btn-danger" onclick="deleteBook()"> <i class="fa-sharp fa-solid fa-trash"></i> </button>
                 <button type="button" class="btn btn-secondary" onclick="logout()"> Logout </button>
                 <div class="dropdown-menu" aria-labelledby="addButton">
                     <div class="input-container">
@@ -52,7 +53,7 @@
                         <input type="text" id="volOwned" placeholder="Owned 1-5" />
                     </div>
                     <div class="input-container">
-                        <input type="text" id="numVol" placeholder="Num Volumes 1" />
+                        <input type="number" id="numVol" placeholder="Num Volumes 1" />
                     </div>
                     <div class="input-container">
                         <input class="input-container-input" type="radio" name="completed" id="completedButton" checked>
@@ -75,7 +76,7 @@
                         </label>
                     </div>
                     <div class="input-container">
-                        <input type="text" id="price" placeholder="Price per vol" />
+                        <input type="number" id="price" placeholder="Price per vol" />
                     </div>
                     <p></p>
                     <button class="btn btn-success insertButton" onclick="toInsert()" > ADD </button>
