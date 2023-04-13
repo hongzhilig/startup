@@ -66,7 +66,7 @@ function toInsert() {
         Language: language, price$: intPrice
     };
     saveBookToList(toAdd)
-    broadcastEvent(localStorage.getItem('userName'), BookAddedEvent, toAdd.Title)
+    broadcastEvent(localStorage.getItem('userName'), BookAddedEvent, toAdd.Title);
 }
 
 async function saveBookToList(bookToAdd) {
@@ -91,6 +91,7 @@ async function deleteBook() {
         method: 'delete', 
     })
     loadBooks();
+    broadcastEvent(localStorage.getItem('userName'), BooksDeletedEvent);
 }
 
 async function loadBooks() {
@@ -144,8 +145,8 @@ function configureWebSocket() {
         const msg = JSON.parse(await event.data.text());
         if (msg.type === BookAddedEvent) {
             displayMsg('user', msg.from, `added ${msg.value}`);
-        } else  {
-            displayMsg('user', msg.from, `How did you do this?`);
+        } else if (msg.type === BooksDeletedEvent){
+            displayMsg('user', msg.from, `Deleted Everything`);
         }
     };
 }
