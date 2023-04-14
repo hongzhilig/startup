@@ -123,6 +123,22 @@ function search() {
     }
 }
 
+function filter() {
+    if (document.getElementById('noneButton').checked) {
+        loadBooks();
+    }
+    else if (document.getElementById('filterENButton').checked) {
+        const bookList = localToBooks();
+        const filteredList = bookList.filter(item => item.Language === 'EN');
+        makeTable(filteredList);
+    }
+    else if (document.getElementById('filterJPButton').checked) {
+        const bookList = localToBooks();
+        const filteredList = bookList.filter(item => item.Language === 'JP');
+        makeTable(filteredList);
+    }
+}
+
 function logout() {
     fetch(`/api/auth/logout`, {
         method: 'delete',

@@ -105,6 +105,27 @@
                 <input type="text" id="searchTitle" placeholder="Title">
                 <button class="btn btn-success insertButton" onclick="search()"> SEARCH </button>
             </div>
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="filterButton" data-toggle="dropdown "
+                    aria-haspopup="true" aria-expanded="false" data-bs-toggle="dropdown">
+                    <i class="fa-solid fa-filter"></i>
+            </button>
+            <div class="dropdown-menu" aria-labelledby="filterButton">
+                <div class="input-container">
+                    <input class="input-container-input" type="radio" name="language" id="filterENButton">
+                    <label class="input-container-label" for="enButton">
+                      EN
+                    </label>
+                    <input class="input-container-input" type="radio" name="language" id="filterJPButton">
+                    <label class="input-container-label" for="jpButton">
+                      JP
+                    </label>
+                    <input class="input-container-input" type="radio" name="language" id="noneButton">
+                    <label class="input-container-label" for="noneButton">
+                      NONE
+                    </label>
+                    <button class="btn btn-success insertButton" onclick="filter()"> FILTER </button>
+                </div>
+            </div>
         </div>
         <!-- <button id="serach" type="button" class="btn btn-secondary"> <i class="fa-solid fa-magnifying-glass"></i>
         </button>
