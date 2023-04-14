@@ -88,7 +88,7 @@ async function saveBookToList(bookToAdd) {
 
 async function deleteBook() {
     fetch('/api/book/deleteAll', {
-        method: 'delete', 
+        method: 'delete',
     })
     loadBooks();
     broadcastEvent(localStorage.getItem('userName'), BooksDeletedEvent);
@@ -110,6 +110,17 @@ async function loadBooks() {
 
     makeTable(books);
     calcTotals();
+}
+
+function search() {
+    const searchTitle = document.querySelector('#searchTitle')?.value;
+    if (searchTitle === "") {
+        loadBooks();
+    } else {
+        const bookList = localToBooks();
+        const filteredList = bookList.filter(item => item.Title.toLowerCase().startsWith(searchTitle.toLowerCase()));
+        makeTable(filteredList);
+    }
 }
 
 function logout() {
@@ -145,7 +156,7 @@ function configureWebSocket() {
         const msg = JSON.parse(await event.data.text());
         if (msg.type === BookAddedEvent) {
             displayMsg('user', msg.from, `added ${msg.value}`);
-        } else if (msg.type === BooksDeletedEvent){
+        } else if (msg.type === BooksDeletedEvent) {
             displayMsg('user', msg.from, `Deleted Everything`);
         }
     };

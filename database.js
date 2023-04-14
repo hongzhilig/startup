@@ -1,6 +1,7 @@
 const {MongoClient} = require('mongodb');
 const bcrypt = require('bcrypt');
 const uuid = require('uuid');
+const { query } = require('express');
 
 const userName = process.env.MONGOUSER;
 const password = process.env.MONGOPASSWORD;

@@ -96,9 +96,19 @@
 
 
     <h2 class="text-center">
-        <button id="serach" type="button" class="btn btn-secondary"> <i class="fa-solid fa-magnifying-glass"></i>
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="searchButton" data-toggle="dropdown "
+                    aria-haspopup="true" aria-expanded="false" data-bs-toggle="dropdown">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+            <div class="dropdown-menu" aria-labelledby="searchButton">
+                <input type="text" id="searchTitle" placeholder="Title">
+                <button class="btn btn-success insertButton" onclick="search()"> SEARCH </button>
+            </div>
+        </div>
+        <!-- <button id="serach" type="button" class="btn btn-secondary"> <i class="fa-solid fa-magnifying-glass"></i>
         </button>
-        <button id="filter" type="button" class="btn btn-secondary"> <i class="fa-solid fa-filter"></i> </button>
+        <button id="filter" type="button" class="btn btn-secondary"> <i class="fa-solid fa-filter"></i> </button> -->
     </h2>
     <main id="mainBody">
         <div id="totals"></div>
