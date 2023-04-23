@@ -409,3 +409,37 @@ Coolies allow: A server to store data on the cient
 | 429  | Too many requests                                                                    | The client is making too many requests in too short of a time period.                                                             |
 | 500  | Internal server error                                                                | The server failed to properly process the request.                                                                                |
 | 503  | Service unavailable                                                                  | The server is temporarily down. The client should try again with an exponential back off. 
+
+
+You can use fetch in front-end and back-end code.
+
+Purpose of JSX: Too inject your html into your JavaScript, To Componetize your HTML, To allow for composability of you HTML
+
+JSX: Only for HTML and JavaScript
+
+Linux daemons: Starts when the computer is rebooted, Executes independent of a user, PM2 is an example of a daemon, Can for other processes
+
+##PM2 Commands
+
+| Command                                                    | Purpose                                                                          |
+| ---------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| **pm2 ls**                                                 | List all of the hosted node processes                                            |
+| **pm2 monit**                                              | Visual monitor                                                                   |
+| **pm2 start index.js -n simon**                            | Add a new process with an explicit name                                          |
+| **pm2 start index.js -n startup -- 4000**                  | Add a new process with an explicit name and port parameter                       |
+| **pm2 stop simon**                                         | Stop a process                                                                   |
+| **pm2 restart simon**                                      | Restart a process                                                                |
+| **pm2 delete simon**                                       | Delete a process from being hosted                                               |
+| **pm2 delete all**                                         | Delete all processes                                                             |
+| **pm2 save**                                               | Save the current processes across reboot                                         |
+| **pm2 restart all**                                        | Reload all of the processes                                                      |
+| **pm2 restart simon --update-env**                         | Reload process and update the node version to the current environment definition |
+| **pm2 update**                                             | Reload pm2                                                                       |
+| **pm2 start env.js --watch --ignore-watch="node_modules"** | Automatically reload service when index.js changes                               |
+| **pm2 describe simon**                                     | Describe detailed process information                                            |
+| **pm2 startup**                                            | Displays the command to run to keep PM2 running after a reboot.                  |
+| **pm2 logs simon**                                         | Display process logs                                                             |
+| **pm2 env 0**                                              | Display environment variables for process. Use `pm2 ls` to get the process ID    |
+
+Whys is hasshing a stored password important?: It improves security by making the password unreadable
+
