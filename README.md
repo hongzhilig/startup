@@ -459,3 +459,9 @@ What value does WebSocket add to HTTP: It is peer to peer instead of client to s
 | 161  | Simple Network Management Protocol (SNMP) for managing network devices such as routers or printers |
 | 194  | Internet Relay Chat (IRC) for chatting                                                             |
 | 443  | HTTP Secure (HTTPS) for secure web requests                                                        |
+
+Recular expressoin by defalut are case sensitive
+
+What does the command "NPM install ws" do: Adds a dependency to your package.json file, Adds the websocket source code to the node_modules directory, Locks the version of the websocket package for your application.
+
+It will not add template code for websockets to your JavaScript
